@@ -111,7 +111,6 @@ elif menu == "Carga y Normalización de Datos":
                     'variables': variables,
                     'category': category
                 })
-                st.toast(f"Archivo '{filename}' procesado como {category}", icon="📄")
             except Exception as e:
                 st.warning(f"No se pudo procesar el archivo '{filename}': {e}")
 
