@@ -37,7 +37,9 @@ if 'uploads' not in st.session_state:
 
 # --- MENÚ ---
 st.sidebar.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuOGlb3OVFkBBZU4IhuuZKql8msuCa-TrteA&s", width=150)
-menu = st.sidebar.radio("Menú Principal", ["Inicio", "Carga y Normalización de Datos", "Generador de Reportes"], index=0)
+with st.sidebar:
+    st.markdown("### Menú Principal")
+    menu = st.selectbox("Selecciona una página:", ["Inicio", "Carga y Normalización de Datos", "Generador de Reportes"])
 
 if menu == "Inicio":
     st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Logo_Sea_Chile.svg/512px-Logo_Sea_Chile.svg.png", width=200)
@@ -52,8 +54,6 @@ if menu == "Inicio":
 
     Usa el menú lateral para comenzar.
     """)
-        "Use la sección de carga para subir archivos de cualquier tipo; la IA extraerá variables clave y organizará datasets relevantes."
-    )
 
 elif menu == "Carga y Normalización de Datos":
     st.header("📥 Carga y Normalización de Datos")
