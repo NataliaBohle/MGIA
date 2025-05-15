@@ -36,7 +36,7 @@ if 'uploads' not in st.session_state:
     st.session_state.uploads = []  # list of dicts: {nombre, df, variables, category}
 
 # --- MENÚ ---
-st.sidebar.image("https://chile.angloamerican.com/~/media/Images/A/Anglo-American-Group-v9/Universal/logo/anglo-american-footer-logo.svg", width=100%)
+st.sidebar.image("https://chile.angloamerican.com/~/media/Images/A/Anglo-American-Group-v9/Universal/logo/anglo-american-footer-logo.svg", width=900)
 with st.sidebar:
     st.markdown("### Menú Principal")
     menu = st.selectbox("Selecciona una página:", ["Inicio", "Carga y Normalización de Datos", "Generador de Reportes", "Preguntas Frecuentes (FAQ)"])
