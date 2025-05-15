@@ -42,7 +42,7 @@ with st.sidebar:
     menu = st.selectbox("Selecciona una página:", ["Inicio", "Carga y Normalización de Datos", "Generador de Reportes", "Preguntas Frecuentes (FAQ)"])
 
 if menu == "Inicio":
-    st.image("https://urbanismo.malaga.eu/export/sites/urbanismo/.galleries/IMAGENES-Imagenes-de-estructura/banner-equipo-redactor.jpg", width=200)
+    st.image("https://urbanismo.malaga.eu/export/sites/urbanismo/.galleries/IMAGENES-Imagenes-de-estructura/banner-equipo-redactor.jpg", width=900)
     st.title("🧠 Plataforma de Reportes de Sustentabilidad Asistida por IA")
     st.markdown("""
     Hola!, esta herramienta inteligente te ayudará transformar documentos no estructurados en reportes claros, trazables y adaptados a distintas audiencias estratégicas.
