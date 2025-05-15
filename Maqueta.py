@@ -36,13 +36,13 @@ if 'uploads' not in st.session_state:
     st.session_state.uploads = []  # list of dicts: {nombre, df, variables, category}
 
 # --- MENÚ ---
-st.sidebar.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuOGlb3OVFkBBZU4IhuuZKql8msuCa-TrteA&s", width=150)
+st.sidebar.image("https://chile.angloamerican.com/~/media/Images/A/Anglo-American-Group-v9/Universal/logo/anglo-american-footer-logo.svg", width=150)
 with st.sidebar:
     st.markdown("### Menú Principal")
-    menu = st.selectbox("Selecciona una página:", ["Inicio", "Carga y Normalización de Datos", "Generador de Reportes"])
+    menu = st.selectbox("Selecciona una página:", ["Inicio", "Carga y Normalización de Datos", "Generador de Reportes", "Preguntas Frecuentes (FAQ)"])
 
 if menu == "Inicio":
-    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Logo_Sea_Chile.svg/512px-Logo_Sea_Chile.svg.png", width=200)
+    st.image("https://urbanismo.malaga.eu/export/sites/urbanismo/.galleries/IMAGENES-Imagenes-de-estructura/banner-equipo-redactor.jpg", width=200)
     st.title("🧠 Plataforma de Reportes de Sustentabilidad Asistida por IA")
     st.markdown("""
     Hola!, esta herramienta inteligente te ayudará transformar documentos no estructurados en reportes claros, trazables y adaptados a distintas audiencias estratégicas.
@@ -54,6 +54,14 @@ if menu == "Inicio":
 
     Usa el menú lateral para comenzar.
     """)
+    st.markdown("---")
+    st.subheader("📈 Últimos reportes generados")
+    data_dummy = pd.DataFrame([
+        {"Título": "Informe Ambiental Abril 2025", "Responsable": "María Torres", "Fecha": "2025-05-16", "Temas": "Indicadores Ambientales, Impacto Social"},
+        {"Título": "Reporte Participación Ciudadana", "Responsable": "Luis Soto", "Fecha": "2025-05-15", "Temas": "Relaciones Comunitarias"},
+        {"Título": "Resumen Ejecutivo Q1", "Responsable": "Ana Rivas", "Fecha": "2025-05-14", "Temas": "Ambiental, Social"}
+    ])
+    st.dataframe(data_dummy, use_container_width=True)
 
 elif menu == "Carga y Normalización de Datos":
     st.header("📥 Carga y Normalización de Datos")
@@ -328,3 +336,23 @@ elif menu == "Generador de Reportes":
         st.download_button("📥 Descargar reporte simulado", data="Contenido simulado del reporte.",
                            file_name=f"reporte_{audiencia.lower().replace(' ', '_')}.{formato.lower()}")
     st.write("Seleccione una opción del menú.")
+    
+elif menu == "Preguntas Frecuentes (FAQ)":
+    st.header("❓ Preguntas Frecuentes (FAQ)")
+    with st.expander("¿Qué tipo de archivos puedo subir a la plataforma?"):
+        st.markdown("Puedes subir archivos en formato .csv, .xlsx, .json, .docx, .txt, .pdf, entre otros. La IA intentará extraer automáticamente información útil desde cualquier tipo de documento.")
+
+    with st.expander("¿Cómo clasifica la IA los archivos subidos?"):
+        st.markdown("El sistema analiza el contenido del archivo (nombres de columnas, texto, patrones) y lo asigna automáticamente a categorías temáticas como 'Indicadores Ambientales', 'Impacto Social' o 'Relaciones Comunitarias'.")
+
+    with st.expander("¿Puedo subir un informe anterior como base para uno nuevo?"):
+        st.markdown("Sí. Puedes cargar un informe en formato .pdf, .docx o .txt y el sistema extraerá su estructura (secciones) para reutilizarla con datos actualizados.")
+
+    with st.expander("¿Qué significa la calidad o consistencia de los datos?"):
+        st.markdown("Es un indicador generado por la IA basado en la completitud, coherencia y frecuencia de aparición de cada variable. Se muestra como semáforo o porcentaje.")
+
+    with st.expander("¿Qué hace el sistema cuando marco 'longitud determinada por la IA'?"):
+        st.markdown("Cuando habilitas esta opción, el sistema estimará automáticamente la extensión más adecuada del informe según la cantidad y calidad de los datos disponibles.")
+
+    with st.expander("¿Qué tan personalizable es el informe final?"):
+        st.markdown("Puedes editar el título, el objetivo, el resumen, la estructura (si cargas una plantilla) y también el estilo narrativo. Además, puedes elegir el formato de salida.")
