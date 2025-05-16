@@ -4,7 +4,7 @@ import os
 import datetime
 from io import StringIO, BytesIO
 
-st.set_page_config(page_title="Generador de Reportes de Sustentabilidad", layout="wide")
+st.set_page_config(page_title="Generador de Reportes", layout="wide")
 
 # --- DIRECTORIOS ---
 input_dir = os.path.join(os.getcwd(), "input")
@@ -43,7 +43,7 @@ with st.sidebar:
 
 if menu == "Inicio":
     st.image("https://urbanismo.malaga.eu/export/sites/urbanismo/.galleries/IMAGENES-Imagenes-de-estructura/banner-equipo-redactor.jpg", width=900)
-    st.title("🧠 Plataforma de Reportes de Sustentabilidad Asistida por IA")
+    st.title("🧠 Bienvenido/a a la Plataforma de Reportes")
     st.markdown("""
     Hola!, esta herramienta inteligente te ayudará transformar documentos no estructurados en reportes claros, trazables y adaptados a distintas audiencias estratégicas.
 
